@@ -60,5 +60,4 @@ public class Coluna {
         this.cartoes = cartoes;
     }
 
-    
 }

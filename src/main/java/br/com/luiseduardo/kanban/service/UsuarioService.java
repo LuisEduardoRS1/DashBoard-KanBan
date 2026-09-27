@@ -8,6 +8,7 @@ import javax.management.RuntimeErrorException;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.luiseduardo.kanban.model.Usuario;
 import br.com.luiseduardo.kanban.repository.UsuarioRepository;
@@ -49,6 +50,7 @@ public class UsuarioService {
         return usuario;
     }
 
+    @Transactional
     public void deletarUsuario(long id){
         usuarioRepository.deleteById(id);
     }

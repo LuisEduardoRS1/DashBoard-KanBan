@@ -16,7 +16,7 @@ import br.com.luiseduardo.kanban.model.Usuario;
 import br.com.luiseduardo.kanban.service.UsuarioService;
 
 @RestController 
-@RequestMapping("/usuarios")
+@RequestMapping("/api/usuarios")
 public class UsuarioController {
     
     @Autowired

@@ -24,7 +24,7 @@ public class UsuarioService {
     }
 
     public Usuario buscarPorId(long id){
-        return procurarUsuario(id);
+        return usuarioRepository.findById(id).orElseThrow();
     }
 
     public Usuario cadastrarUsuario(Usuario usuario){
@@ -33,21 +33,11 @@ public class UsuarioService {
     }
 
     public Usuario alterarUsuario(long id, Usuario novosDados){
-        Usuario usuario = procurarUsuario(id);
+        Usuario usuario = usuarioRepository.findById(id).orElseThrow();
         usuario.setNome(novosDados.getNome());
         usuario.setEmail(usuario.getEmail());
 
         return usuarioRepository.save(usuario);
-    }
-
-    private Usuario procurarUsuario(long id){
-        Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
-        if(optionalUsuario.isEmpty()){
-            throw new RuntimeException("Usuário Inexistente");
-        }
-
-        Usuario usuario = optionalUsuario.get();
-        return usuario;
     }
 
     @Transactional

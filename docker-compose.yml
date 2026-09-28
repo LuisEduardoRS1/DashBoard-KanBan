@@ -1,0 +1,11 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-kanban
+    environment:
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_DATABASE=kanban
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"

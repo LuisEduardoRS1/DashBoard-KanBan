@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Quadro {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
 
     @OneToMany(mappedBy = "quadro")

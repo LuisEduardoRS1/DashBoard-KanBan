@@ -14,13 +14,13 @@ import jakarta.persistence.Table;
 public class Cartao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String titulo;
     private String descricao;
     @ManyToOne
     @JoinColumn(name = "coluna_id")
     private Coluna coluna;
-    
+
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuarioAtribuido;
